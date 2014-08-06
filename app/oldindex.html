@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>La Scada</title>
+    <link href="/LaScada/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+
+
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" href="/LaScada/content/images/icon_solarc.gif" />
+
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="196x196" href="/LaScada/content/images/icon_solarc-196x196.gif">
+
+    <link href="http://54.203.251.4/LaScada/Content/site.css" rel="stylesheet" />
+    <link href="http://54.203.251.4/LaScada/Content/ratchet.css" rel="stylesheet" />
+    <link href="http://54.203.251.4/LaScada/Content/add2home.css" rel="stylesheet" />
+
+</head>
+<body>
+    <header class="bar-title">
+
+        <h1 class="title">My Plant</h1>
+
+        <a class="button menu-trigger" href="#menu">
+            <img src="/LaScada/content/images/SidePanel.png" style="vertical-align:middle; margin-top: -1px; margin-right: 2px;" />
+
+        </a>
+    </header>
+
+    <nav class="bar-tab">
+        <ul class="tab-inner ">
+            <li class="tab-item ">
+                <a href="/LaScada/Home/Index">
+                    <span class="tab-icon tab-icon-home">&nbsp;</span>
+                    <div class="tab-label">Home</div>
+                </a>
+            </li>
+            <li class="tab-item ">
+                <a href="/LaScada/Tag/AlertList">
+                    <span class="tab-icon tab-icon-alerts">&nbsp;</span>
+                    <div class="tab-label">Alerts</div>
+                </a>
+            </li>
+            <li class="tab-item ">
+                <a href="/LaScada/Admin/Index">
+                    <span class="tab-icon tab-icon-admin">&nbsp;</span>
+                    <div class="tab-label">Admin</div>
+                </a>
+            </li>
+            <li class="tab-item ">
+                <a href="/LaScada/Home/About">
+                    <span class="tab-icon tab-icon-about">&nbsp;</span>
+                    <div class="tab-label">About</div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div id="body" class="content content-padded">
+        <ul class="list">
+
+            <li>
+                <a href="/LaScada/Tag/HistoryGraph/10508?ReturnURL=%2FLaScada%2FTag%2FDashboard%3FLocationId%3D1188">
+                    <span class="gaugeName">Main Piller</span>
+                    <div class="toggle active">
+                        <div class="toggle-handle"></div>
+                    </div>
+                </a>
+            </li>
+            <li class="li-full">
+                <a href="/LaScada/Tag/HistoryGraph/10509?ReturnURL=%2FLaScada%2FTag%2FDashboard%3FLocationId%3D1188" class="circular" style="width: 100%;">
+                    <div class="gaugeContainer" data-value="70" data-min="0" data-max="130" data-uom="Unit/H"></div>
+                    <div class="gaugeValue"></div>
+                    <div class="li-center gaugeName">Production Rate</div>
+                </a>
+            </li>
+            <li>
+                <a href="/LaScada/Tag/HistoryGraph/10510?ReturnURL=%2FLaScada%2FTag%2FDashboard%3FLocationId%3D1188">
+                    <div class="li-left gaugeName">
+                        <span>
+                            Total production
+                        </span>
+                    </div>
+
+
+                    <div class="li-right gaugeName">
+                        <span>120.3</span>
+                        <span>TON</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/LaScada/Tag/HistoryGraph/10511?ReturnURL=%2FLaScada%2FTag%2FDashboard%3FLocationId%3D1188">
+                    <div class="li-left gaugeName">
+                        <span>Shift Manager</span>
+                    </div>
+                    <div class="li-right gaugeName">
+                        <span>יוסי</span>
+                        <span></span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <div id="menu" class="sidepanel" style="display:none;">
+        <ul class="list">
+            <li class="list-divider">My Plant</li>
+            <li class="list-divider">
+                Productuion site
+            </li>
+            <li>
+                <a href="/LaScada/Tag/Dashboard?LocationId=1190">
+                    Line 1
+
+                    <span class="chevron"></span>
+
+                </a>
+            </li>
+            <li>
+                <a href="/LaScada/Tag/Dashboard?LocationId=1191">
+                    Line 2
+                    <span class="chevron"></span>
+
+                </a>
+            </li>
+            <li>
+                <a href="/LaScada/Tag/Dashboard?LocationId=1192">
+                    Line 3
+                    <span class="chevron"></span>
+
+                </a>
+            </li>
+            <li class="list-divider">
+                Ovens site
+            </li>
+            <li>
+                <a href="/LaScada/Tag/Dashboard?LocationId=1194">
+                    Oven 1
+                    <span class="chevron"></span>
+
+                </a>
+            </li>
+            <li>
+                <a href="/LaScada/Tag/Dashboard?LocationId=1195">
+                    Oven 2
+                    <span class="chevron"></span>
+
+                </a>
+            </li>
+            <li>
+                <a href="/LaScada/Tag/Dashboard?LocationId=1196">
+                    Oven 3
+                    <span class="chevron"></span>
+
+                </a>
+            </li>
+            <li class="list-divider">
+                Utilities
+            </li>
+            <li>
+                <a href="/LaScada/Tag/Dashboard?LocationId=1198">
+                    Water Center
+
+                    <span class="chevron"></span>
+
+                </a>
+            </li>
+            <li>
+                <a href="/LaScada/Tag/Dashboard?LocationId=1199">
+                    Energy usage
+
+                    <span class="chevron"></span>
+
+                </a>
+            </li>
+            <li>
+                <a href="/LaScada/Tag/Dashboard?LocationId=1200">
+                    Enviorment KPI
+
+                    <span class="chevron"></span>
+
+                </a>
+            </li>
+            <li class="list-divider"></li>
+            <li style=" background-color:black; font-size: 20px; font-weight: bold; line-height: 30px; color: #FFF;  ">
+                <a href="/LaScada/Account/LogOff">Log off  noam2 </a>
+            </li>
+
+        </ul>
+    </div>
+
+
+
+    <script src="/LaScada/Scripts/jquery-1.8.2.js"></script>
+
+    <script>
+        $(document).on("mobileinit", function () {
+            $.mobile.ajaxEnabled = false;
+        });
+    </script>
+    <script src="/LaScada/Scripts/jquery.jpanelmenu.js"></script>
+    <script src="/LaScada/Scripts/App/Global.js"></script>
+
+
+    <script src="/LaScada/Scripts/jqxcore.js"></script>
+    <script src="/LaScada/Scripts/jqxchart.js"></script>
+    <script src="/LaScada/Scripts/jqxgauge.js"></script>
+    <script src="/LaScada/Scripts/jqxdata.js"></script>
+
+    <script src="/LaScada/Scripts/App/Dashboard.js"></script>
+
+
+
+</body>
+</html>
