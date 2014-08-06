@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    </head>
+<body>
+	
+	<div ng-app ng-controller='ridesController'>
+
+		<input type='text' placeholder="username" ng-model='username'></input>
+		<input type='text' placeholder="password" ng-model='password'></input>
+
+		<span>{{hello}}</span>
+
+		<button ng-click='doLogin()'> Login
+		</button>
+
+
+	</div>
+
+  <script src="bower_components/angular/angular.js"></script>
+
+<script type="text/javascript">
+	function ridesController($scope, $http) {
+
+		$scope.hello = "from angular";
+		$scope.doLogin = function()
+		{
+			console.log($scope.username);
+			console.log($scope.password);
+		
+			var body = "grant_type=password&username=elad@test.com&password=123456";
+
+			//body = '';
+
+            $http({
+            	method: 'POST', 
+            	url: 'http://54.203.251.4/lascada-webapi/Token', 
+            	headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            	data: body
+            }).
+            success(function(data, status, headers, config) {
+                
+                console.log(data);
+            }).
+            error(function(data, status, headers, config) {
+
+            });
+		}
+	}
+</script>
+
+	
+</body>
+</html>
