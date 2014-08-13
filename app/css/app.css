@@ -28,3 +28,17 @@
   content: "";
   padding: 0;
 }
+
+.moved-body{
+  left: 255px !important;
+}
+
+.moved-menu{
+  left:0px !important;
+}
+
+.Sbody{
+  transition: all 0.4s !important;
+}
+
+

@@ -12,7 +12,30 @@
 		<span>{{hello}}</span>
 
 		<button ng-click='doLogin()'> Login
-		</button>
+		</button> <br/>
+		
+		<button ng-click='getConnectors()'> Get Connectors
+		</button> <br/>
+
+		<button ng-click='getLocations()'> Get Locations
+		</button> <br/>
+
+
+		<ul>
+			<li ng-repeat='site in locations' >
+			{{site.LocationName}}
+			<ul>
+				<li ng-repeat='area in site.childLocations' >
+				{{area.LocationName}}
+				<ul>
+					<li ng-repeat='location in area.childLocations' >
+					{{location.LocationName}}
+					</li>
+				</ul>
+				</li>
+			</ul>
+			</li>
+		</ul>
 
 
 	</div>
@@ -30,8 +53,6 @@
 		
 			var body = "grant_type=password&username=elad@test.com&password=123456";
 
-			//body = '';
-
             $http({
             	method: 'POST', 
             	url: 'http://54.203.251.4/lascada-webapi/Token', 
@@ -41,11 +62,104 @@
             success(function(data, status, headers, config) {
                 
                 console.log(data);
+
+                var access_token = data. access_token ;
+
+                console.log(access_token);
+
+
             }).
             error(function(data, status, headers, config) {
 
             });
 		}
+
+		$scope.getConnectors = function()
+		{
+			var siteId = '10';
+
+			$http({
+            	method: 'GET', 
+            	url: 'http://54.203.251.4/lascada-webapi/api/Connector/' + siteId
+            }).
+            success(function(data, status, headers, config) {
+                
+                console.log(data);
+
+            }).
+            error(function(data, status, headers, config) {
+
+            });
+		}
+
+		$scope.getLocations = function()
+		{
+			var siteId = '10';
+
+			$http({
+            	method: 'GET', 
+            	url: 'http://54.203.251.4/lascada-webapi/api/Location/' + siteId
+            }).
+            success(function(data, status, headers, config) {
+                
+                setLocations(data)
+            }).
+            error(function(data, status, headers, config) {
+
+            });
+		}
+
+		$scope.addSite = function()
+		{
+			var siteId = '10';
+
+			$http({
+            	method: 'GET', 
+            	url: 'http://54.203.251.4/lascada-webapi/api/Location/' + siteId
+            }).
+            success(function(data, status, headers, config) {
+                
+                setLocations(data)
+            }).
+            error(function(data, status, headers, config) {
+
+            });
+		}
+
+		function setLocations(rawData)
+		{
+			var locations = [];
+
+			var locationMap = {};
+
+			for (var i = rawData.length - 1; i >= 0; i--) {
+				var locationId = rawData[i].LocationId;
+				var locationParentId = rawData[i].LocationId;
+				locationMap[locationId] = rawData[i];
+			};
+			            
+			for (var i = rawData.length - 1; i >= 0; i--) {
+				var locationId = rawData[i].LocationId;
+				var locationParentId = rawData[i].LocationParentId;
+				locationMap[locationId] = rawData[i];
+
+				if  (locationParentId == 0)
+				{
+					locations.push(rawData[i]);
+				}
+				else
+				{
+					if (!locationMap[locationParentId].childLocations)
+						locationMap[locationParentId].childLocations = [];
+					locationMap[locationParentId].childLocations.push(rawData[i]);
+				}
+
+			};
+
+            $scope.locations = locations;
+		}
+
+
 	}
 </script>
 
