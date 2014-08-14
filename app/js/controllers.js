@@ -20,7 +20,6 @@ angular.module('myApp.controllers', [])
     }])
     .controller('AboutController', ['$scope', function ($scope) {
 
-<<<<<<< HEAD
   }])
   .controller('LocationController', ['$scope', '$routeParams', function($scope,$routeParams) {
       $scope.locationId = $routeParams.locationId
@@ -32,7 +31,6 @@ angular.module('myApp.controllers', [])
   .controller('IndexController', ['$scope', '$http', function($scope, $http) {
 
   	$scope.isMenuOpen = false;
-=======
     }])
     .controller('LocationController', ['$scope', '$routeParams', function ($scope, $routeParams) {
         $scope.locationId = $routeParams.locationId
@@ -45,7 +43,6 @@ angular.module('myApp.controllers', [])
         $scope.locations = ['ramat gan', 'tel aviv'];
 
         $scope.isMenuOpen = false;
->>>>>>> a03c1472c7ffaf794809a35a70acf82d7ef3b781
 
         $scope.getLocations = function () {
             var siteId = '10';
