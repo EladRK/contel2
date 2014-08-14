@@ -38,11 +38,11 @@ angular.module('myApp.controllers', [])
       var siteId = '10';
 
       $http({
-              method: 'GET', 
+              method: 'GET',
               url: 'http://54.203.251.4/lascada-webapi/api/Location/' + siteId
             }).
             success(function(data, status, headers, config) {
-                
+
                 setLocations(data)
             }).
             error(function(data, status, headers, config) {
@@ -61,7 +61,7 @@ angular.module('myApp.controllers', [])
         var locationParentId = rawData[i].LocationId;
         locationMap[locationId] = rawData[i];
       };
-                  
+
       for (var i = rawData.length - 1; i >= 0; i--) {
         var locationId = rawData[i].LocationId;
         var locationParentId = rawData[i].LocationParentId;
