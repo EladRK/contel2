@@ -41,4 +41,8 @@
   transition: all 0.4s !important;
 }
 
+.ng-scope{
+  transform:none !important;
+}
+
 

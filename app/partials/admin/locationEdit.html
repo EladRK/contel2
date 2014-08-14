@@ -1,0 +1,90 @@
+
+<div class="editor-label">
+    Edit  Site
+</div>
+<div class="editor-field">
+    <input class="text-box single-line" data-val="true" data-val-length="First name cannot be longer than 50 characters." data-val-length-max="50" data-val-required="The Location Name field is required." id="LocationName" name="LocationName" type="text" value="My Plant">
+    <span class="field-validation-valid" data-valmsg-for="LocationName" data-valmsg-replace="true"></span>
+</div>
+<p>
+    <input id="submitBtn" type="submit" class="button-block button-100" value="Save">
+</p>
+<div id="__AjaxAntiForgeryForm">
+
+</div>
+<div id="result" data-url-delete="/LaScada/Location/Delete">
+    <ul class="list">
+        <li class="list-divider">Edit Your Plant Areas </li>
+        <li class="swipe-li">
+            <div class="list-item list-item-swipe" data-href="/LaScada/Location/Edit/1189">
+                Productuion site
+
+                <span class="count count-swipe">Edit</span>
+            </div>
+            <a data-item-name="Productuion site
+            " data-item-id="1189" data-delete-msg="Are you sure you want to delete Productuion site
+            and all of it's related tags?" class="button-negative button-delete button-swipe button-hidden">Delete</a>
+        </li>
+        <li class="swipe-li">
+            <div class="list-item list-item-swipe" data-href="/LaScada/Location/Edit/1193">
+                Ovens site
+
+                <span class="count count-swipe">Edit</span>
+            </div>
+            <a data-item-name="Ovens site
+            " data-item-id="1193" data-delete-msg="Are you sure you want to delete Ovens site
+            and all of it's related tags?" class="button-negative button-delete button-swipe button-hidden">Delete</a>
+        </li>
+        <li class="swipe-li">
+            <div class="list-item list-item-swipe" data-href="/LaScada/Location/Edit/1197">
+                Utilities
+
+                <span class="count count-swipe">Edit</span>
+            </div>
+            <a data-item-name="Utilities
+            " data-item-id="1197" data-delete-msg="Are you sure you want to delete Utilities
+            and all of it's related tags?" class="button-negative button-delete button-swipe button-hidden">Delete</a>
+        </li>
+
+        <li class="list-divider">
+            <div>
+                <a href="/LaScada/Location/Create?LocationParentId=1188">
+                    <span class="icon-add">&nbsp;</span>
+                    <span>Add New Area</span>
+                </a>
+            </div>
+        </li>
+
+    </ul>
+
+</div>
+
+
+<script id="template" type="text/x-handlebars-template">
+    <ul id="user-list" class="list">
+     <li class="list-divider">Edit Your Plant Areas</li>
+     {{#each objects}}
+     <li class="swipe-li">
+        <div class="list-item list-item-swipe" data-href="/LaScada/Location/Edit/0/{{this.LocationId}}">
+            {{this.LocationName}}
+            <span class="count count-swipe">Edit</span>
+        </div>
+        <a data-item-name="{{this.LocationName}}" data-item-id="{{this.LocationId}}" data-delete-msg="Are you sure you want to delete {{this.LocationName}} and all of it's related tags?" class="button-negative button-delete button-swipe button-hidden" >Delete</a>
+    </li>
+    {{/each}}
+    <li class="list-divider">
+        <div>   
+         <a href="/LaScada/Location/Create?LocationParentId=1188">
+            <span class="icon-add">&nbsp;</span>
+            <span>Add New Area</span>
+        </a>
+    </div>
+</li>
+</ul>
+</script>
+
+
+
+
+
+

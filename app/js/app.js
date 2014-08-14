@@ -16,6 +16,7 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/alerts', {templateUrl: 'partials/alerts.html', controller: 'AlertsController'});
   $routeProvider.when('/admin', {templateUrl: 'partials/admin.html', controller: 'AdminController'});
   $routeProvider.when('/admin/createSite', {templateUrl: 'partials/admin/createSite.html', controller: 'CreateSiteController'});
+  $routeProvider.when('/admin/Location/Edit/:locationId', {templateUrl: 'partials/admin/locationEdit.html', controller: 'LocationEditController'});
   $routeProvider.when('/about', {templateUrl: 'partials/about.html', controller: 'AboutController'});
   $routeProvider.when('/location/:locationId', {templateUrl: 'partials/location.html', controller: 'LocationController'});
   $routeProvider.otherwise({redirectTo: '/view1'});

@@ -1,35 +1,30 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>La Scada</title>
-		<link href="/LaScada/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+<head>
+    <meta charset="utf-8" />
+    <title>La Scada</title>
+    <link href="/LaScada/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" href="/LaScada/content/images/icon_solarc.gif" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="196x196" href="/LaScada/content/images/icon_solarc-196x196.gif">
 
+    <link href="http://54.203.251.4/LaScada/Content/site.css" rel="stylesheet"/>
+    <link href="http://54.203.251.4/LaScada/Content/ratchet.css" rel="stylesheet"/>
+    <link href="http://54.203.251.4/LaScada/Content/add2home.css" rel="stylesheet"/>
 
-        
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" href="/LaScada/content/images/icon_solarc.gif" />
+</head>
+<body ng-app ng-contoller='loginController'>
+    <header class="bar-title" > 
 
-        
-        <meta name="mobile-web-app-capable" content="yes">
-        <link rel="shortcut icon" sizes="196x196" href="/LaScada/content/images/icon_solarc-196x196.gif">
+        <h1 class="title">Login {{ Something }}</h1>
 
-        <link href="http://54.203.251.4/LaScada/Content/site.css" rel="stylesheet"/>
-<link href="http://54.203.251.4/LaScada/Content/ratchet.css" rel="stylesheet"/>
-<link href="http://54.203.251.4/LaScada/Content/add2home.css" rel="stylesheet"/>
-
-    </head>
-    <body>
-        <header class="bar-title" > 
-            
-            <h1 class="title">Login</h1>
-             
-        </header>
+    </header>
     
-            <nav class="bar-tab">
+    <nav class="bar-tab">
         <ul class="tab-inner ">
             <li class="tab-item ">
                 <a href="/LaScada/Home/Index">
@@ -53,78 +48,66 @@
     </nav>
 
 
-        <div id="body" class="content content-padded">
-            
+    <div id="body" class="content content-padded" >
+        <div id="spacer" style="height: 20px;"></div>
+        <div style="text-align: center;">
+            <img  src="http://54.203.251.4/LaScada/Content/images/lascadaLogo.png"  width="85%" />
+        </div>
+        <div id="spacer" style="height: 20px;"></div>
 
 
+        <label class="error"></label>
 
+        <div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+        </ul></div>    <ul data-role="listview" data-inset="true">
 
-
-<div id="spacer" style="height: 20px;"></div>
-<div style="text-align: center;">
-    <img  src="http://54.203.251.4/LaScada/Content/images/lascadaLogo.png"  width="85%" />
-</div>
-<div id="spacer" style="height: 20px;"></div>
-
-
-<label class="error"></label>
-
-<form action="/LaScada/Account/Login?ReturnUrl=%2fLaScada%2f" method="post"><input name="__RequestVerificationToken" type="hidden" value="6rm1KYtvim2I5hzv3v1X9GJK077jlHl6NiWMamNuYQAdW1OAIlZZJBQlhYWBRQcdoosAMEnmiFVtBV-z9uUm5dY_fwam6B_f7zVWkk1DKxE1" /><div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
-</ul></div>    <ul data-role="listview" data-inset="true">
-      
 
         <li data-role="fieldcontain">
-         
+
             <input data-val="true" data-val-required="The User Name field is required." id="UserName" name="UserName" placeholder="Name@example.com" type="text" value="" />            
         </li>
 
         <li data-role="fieldcontain">
-       
+
             <input data-val="true" data-val-required="The Password field is required." id="Password" name="Password" placeholder="Password" type="password" />            
         </li>
         <li data-role="fieldcontain">
-                  
+
         </li>
-      
+
 
         <li data-role="fieldcontain">
             <input class="button-block button-100" type="submit" value="Login" />
         </li>
-         <li data-role="fieldcontain">
-                  
+        <li data-role="fieldcontain">
+
         </li>
-          <li data-role="fieldcontain">
+        <li data-role="fieldcontain">
             <label for="RememberMe">Remember me?</label>
             <input data-val="true" data-val-required="The Remember me? field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
         </li>
     </ul>
- <div id="spacer" style="height: 20px;"></div>
-<p>
-   Login or <a href="/LaScada/Account/AdminRegister">Register</a> if you don't have an account.
-   
-   </p>
-</form>
+    <div id="spacer" style="height: 20px;"></div>
+    <p>
+     Login or <a href="/LaScada/Account/AdminRegister">Register</a> if you don't have an account.
 
-        </div>
-        
-        
+ </p>
 
+</div>
 
-        <script src="/LaScada/Scripts/jquery-1.8.2.js"></script>
-
-        <script>
-            $(document).on("mobileinit", function () {
-                $.mobile.ajaxEnabled = false;
-            });
-        </script>
-        <script src="/LaScada/Scripts/jquery.jpanelmenu.js"></script>
-<script src="/LaScada/Scripts/App/Global.js"></script>
-
-        
-    <script src="/LaScada/Scripts/jquery.validate.js"></script>
-<script src="/LaScada/Scripts/jquery.validate.unobtrusive.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
 
 
-        
-    </body>
+<script >
+
+function loginController ($scope, $http)
+{
+    $scope.Something = 'hello';
+}
+
+
+</script>
+
+</body>
 </html>
