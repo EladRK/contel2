@@ -4,7 +4,7 @@
     </head>
 <body>
 	
-	<div ng-app ng-controller='ridesController'>
+	<div ng-app='myApp' ng-controller='testController'>
 
 		<button ng-click='doLogin()'> Login
 		</button> <br/>
@@ -40,7 +40,16 @@
   <script src="bower_components/angular/angular.js"></script>
 
 <script type="text/javascript">
-	function ridesController($scope, $http) {
+
+var myApp =  angular.module('myApp', []);
+
+myApp.config(['$httpProvider', function($httpProvider) {
+	$httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common["X-Requested-With"];
+
+}]);
+
+	 myApp.controller('testController', function ($scope, $http) {
 
 		$scope.doLogin = function()
 		{
@@ -87,11 +96,15 @@
 
 		$scope.getLocations = function()
 		{
+			$http.defaults.headers.common['Authorization'] = 'bearer ' + $scope.token;
+			delete $http.defaults.headers.common['X-Requested-With'];
+			$http.defaults.useXDomain = true;
+			
 			var siteId = '1014';
 
 			$http({
             	method: 'GET', 
-            	headers: {'Authorization': 'bearer ' + $scope.token},
+            	//headers: {'Authorization': 'bearer ' + $scope.token},
             	url: 'http://54.203.251.4/lascada-webapi/api/Location/' + siteId
             }).
             success(function(data, status, headers, config) {
@@ -105,10 +118,12 @@
 
 		$scope.getSites = function()
 		{
-			$http.defaults.headers.common.Authorization = 'bearer ' + $scope.token;
+			$http.defaults.useXDomain = true;
 
 			$http({
             	method: 'GET', 
+           		//headers: {'Authorization': 'bearer ' + $scope.token},
+            	headers : {'Content-Type' : 'application/x-www-form-urlencoded', 'Authorization':'Elad'},
             	url: 'http://54.203.251.4/lascada-webapi/api/site/GetUserSites'
             }).
             success(function(data, status, headers, config) {
@@ -172,7 +187,7 @@
 		}
 
 
-	}
+	});
 </script>
 
 	

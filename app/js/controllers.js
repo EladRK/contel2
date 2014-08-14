@@ -29,7 +29,24 @@ angular.module('myApp.controllers', [])
   }])
   .controller('IndexController', ['$scope', '$http', function($scope, $http) {
 
-  	$scope.isMenuOpen = false;
+        $scope.getTags = function () {
+
+            $http({
+                method: 'GET',
+                url: 'http://54.203.251.4/LaScada-WebApi/api/Tag/1018?LocationId=2259'
+            }).
+            success(function (data, status, headers, config) {
+
+                console.log(data);
+            }).
+            error(function (data, status, headers, config) {
+
+            });
+        }
+
+
+        $scope.isMenuOpen = false;
+        $scope.getTags();
     }])
     .controller('LocationController', ['$scope', '$routeParams', function ($scope, $routeParams) {
         $scope.locationId = $routeParams.locationId
@@ -98,7 +115,21 @@ angular.module('myApp.controllers', [])
     }])
     .controller('UserManagmentController', ['$scope', function ($scope) {
     }])
-    .controller('SiteSelectorController', ['$scope', function ($scope) {
+    .controller('SiteSelectorController', ['$scope', '$http', function ($scope, $http) {
+
+            $http({
+                method: 'GET', 
+                url: 'http://54.203.251.4/lascada-webapi/api/site/GetUserSites'
+            }).
+                success(function (data, status, headers, config) {
+
+                    console.log(data);
+
+                }).
+                error(function (data, status, headers, config) {
+
+                });
+
     }])
     .controller('EditHomeScreenController', ['$scope', function ($scope) {
     }]);
