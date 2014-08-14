@@ -106,7 +106,7 @@
 		$scope.getSites = function()
 		{
 			$http({
-            	method: 'GET', 
+            	method: 'GET',
             	headers: {'Authorization': 'bearer ' + $scope.token},
             	url: 'http://54.203.251.4/lascada-webapi/api/site/GetUserSites'
             }).

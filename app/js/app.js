@@ -17,6 +17,12 @@ angular.module('myApp', [
         $routeProvider.when('/admin', {templateUrl: 'partials/admin.html', controller: 'AdminController'});
         $routeProvider.when('/admin/createSite', {templateUrl: 'partials/admin/createSite.html', controller: 'CreateSiteController'});
         $routeProvider.when('/admin/Location/Edit/:locationId', {templateUrl: 'partials/admin/locationEdit.html', controller: 'LocationEditController'});
+        $routeProvider.when('/admin/Connector/Edit/:connectorId', {templateUrl: 'partials/admin/ConnectorEdit.html', controller: 'ConnectorEditController'});
+        $routeProvider.when('/admin/Location/Create/:locationParentId', {templateUrl: 'partials/admin/CreateLocation.html', controller: 'createLocationController'});
+        $routeProvider.when('/admin/Account/CreateUser', {templateUrl: 'partials/admin/CreateUser.html', controller: 'createUserController'});
+        $routeProvider.when('/admin/Tag/Edit:locationId', {templateUrl: 'partials/admin/TagEdit.html', controller: 'EditTagController'});
+        $routeProvider.when('/admin/Tag/Create:locationId', {templateUrl: 'partials/admin/TagCreate.html', controller: 'CreateTagController'});
+        $routeProvider.when('/admin/Connector/Create', {templateUrl: 'partials/admin/CreateConnector.html', controller: 'createConnectorController'});
         $routeProvider.when('/about', {templateUrl: 'partials/about.html', controller: 'AboutController'});
         $routeProvider.when('/location/:locationId', {templateUrl: 'partials/location.html', controller: 'LocationController'});
         $routeProvider.when('/admin/Connector/Index', {templateUrl: 'partials/admin/connector.html', controller: 'ConnectorController'});

@@ -1,0 +1,31 @@
+
+<h2></h2>
+
+<form action="/LaScada/Account/CreateUser" method="post"><input name="__RequestVerificationToken" type="hidden" value="UGl0rgL_Vlik-luy2AntDeac8vyXy3c3qjdTNM0HAmnUiWKLFJvAWQ65hExxouacgwQfyYDK_O6roknbc001oS3ukRpkO6KqY0xx1eqHHpQm2r3QpOpyMNeQ_c1RmcY30" /><div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+</ul></div>    <ul data-role="listview" data-inset="true">
+      
+      
+
+        <li data-role="fieldcontain">
+            <label for="UserName">User Name</label> (e-mail address)
+            <input data-val="true" data-val-required="The User Name field is required." id="UserName" name="UserName" placeholder="Name@example.com" type="text" value="" />    
+                  
+        </li>
+
+        <li data-role="fieldcontain">
+            <label for="Password">Password</label> (at least 6 characters long.)
+            <input data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Password" name="Password" placeholder="Password" type="password" />            
+        </li>
+
+        <li data-role="fieldcontain">
+            <label for="ConfirmPassword">Confirm Password</label>
+            <input data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Password" type="password" />            
+        </li>
+
+        
+
+        <li data-role="fieldcontain">
+              <input id="submitBtn" type="submit" class="button-block button-100" value="Save"/>
+        </li>
+    </ul>
+</form>

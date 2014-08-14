@@ -1,0 +1,58 @@
+
+
+
+<form action="/LaScada/Connector/Create" method="post"><input name="__RequestVerificationToken" type="hidden" value="jaC408LTrbzkWFqRW-8URFOy4GHSIzn6Z8oA8J9SwRBke20xGLvFxeEeq_0VIuT9Bo8r1I8SooKEGLG49LFK3IRFY-u97tZzHrIEaewpfhCbd04hmXpB4CV5yr5aaM450" />    <fieldset>
+        <legend></legend>
+
+        <div class="editor-label">
+            <label for="ConnectorName">Connector Name</label>
+        </div>
+        <div class="editor-field">
+            <input class="text-box single-line" data-val="true" data-val-required="The Connector Name field is required." id="ConnectorName" name="ConnectorName" type="text" value="" />
+            <span class="field-validation-valid" data-valmsg-for="ConnectorName" data-valmsg-replace="true"></span>
+        </div>
+        <div class="editor-label">
+            <label for="ConnectorTypeId">ConnectorType</label>
+        </div>
+        <div class="editor-field">
+
+      <select id="ConnectorTypeId" name="ConnectorTypeId">
+        <option value="">Please Select Type</option>
+                <option value="1">OPC</option>
+                <option value="5">Random</option>
+                <option value="6">PIConnector</option>
+        </select>
+            <span class="field-validation-valid" data-valmsg-for="ConnectorTypeId" data-valmsg-replace="true"></span>
+        </div>
+
+        <div id="divOPC" class="hidden-no-height">
+            <div class="editor-label">
+                <label for="OPC_ServerURL">OPC_ServerURL</label>
+            </div>
+            <div class="editor-field">
+                <input class="text-box single-line" id="OPC_ServerURL" name="OPC_ServerURL" type="text" value="" />
+                <span class="field-validation-valid" data-valmsg-for="OPC_ServerURL" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="editor-label">
+            <label for="ScanRateId">ScanRate</label>
+        </div>
+        <div class="editor-field">
+            
+            <select data-val="true" data-val-number="The field Scan Rate must be a number." data-val-required="The Scan Rate field is required." id="ScanRateId" name="ScanRateId"><option value="">Please select Scan Rate</option>
+<option value="1">5 Minutes</option>
+<option value="2">15 Minutes</option>
+<option value="3">30 Minutes</option>
+<option value="5">1 Hour</option>
+</select>
+            <span class="field-validation-valid" data-valmsg-for="ScanRateId" data-valmsg-replace="true"></span>
+        </div>
+
+        <p>
+            <input type="submit" value="Create" class="button-block button-100" />
+        </p>
+    </fieldset>
+</form>
+
+

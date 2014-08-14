@@ -20,17 +20,38 @@ angular.module('myApp.controllers', [])
     }])
     .controller('AboutController', ['$scope', function ($scope) {
 
-  }])
-  .controller('LocationController', ['$scope', '$routeParams', function($scope,$routeParams) {
-      $scope.locationId = $routeParams.locationId
-  }])
-  .controller('LocationEditController', ['$scope', '$routeParams', function($scope,$routeParams) {
+    }])
+    .controller('LocationController', ['$scope', '$routeParams', function ($scope, $routeParams) {
+        $scope.locationId = $routeParams.locationId
+    }])
+    .controller('LocationEditController', ['$scope', '$routeParams', function ($scope, $routeParams) {
 
-      $scope.locationId = $routeParams.locationId
-  }])
-  .controller('IndexController', ['$scope', '$http', function($scope, $http) {
+        $scope.locationId = $routeParams.locationId
+    }])
+    .controller('ConnectorEditController', ['$scope', '$routeParams', function ($scope, $routeParams) {
 
-  	$scope.isMenuOpen = false;
+        $scope.locationId = $routeParams.locationId
+    }])
+    .controller('createLocationController', ['$scope', '$routeParams', function ($scope, $routeParams) {
+
+        $scope.locationId = $routeParams.locationId
+    }])
+    .controller('createLocationController', ['$scope', '$routeParams', function ($scope, $routeParams) {
+
+        $scope.locationId = $routeParams.locationId
+    }])
+    .controller('EditTagController', ['$scope', function ($scope) {
+
+    }])
+    .controller('CreateTagController', ['$scope', function ($scope) {
+
+    }])
+    .controller('createUserController', ['$scope', function ($scope) {
+
+    }])
+    .controller('IndexController', ['$scope', '$http', function ($scope, $http) {
+
+        $scope.isMenuOpen = false;
     }])
     .controller('LocationController', ['$scope', '$routeParams', function ($scope, $routeParams) {
         $scope.locationId = $routeParams.locationId
