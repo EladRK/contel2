@@ -17,10 +17,10 @@
     <link href="http://54.203.251.4/LaScada/Content/add2home.css" rel="stylesheet"/>
 
 </head>
-<body ng-app ng-contoller='loginController'>
+<body ng-app ng-controller='loginController'>
     <header class="bar-title" > 
 
-        <h1 class="title">Login {{ Something }}</h1>
+        <h1 class="title">Login</h1>
 
     </header>
     
@@ -58,27 +58,27 @@
 
         <label class="error"></label>
 
-        <div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
-        </ul></div>    <ul data-role="listview" data-inset="true">
+        <div class="validation-summary-valid" data-valmsg-summary="true">
+            <ul>
+                <li style="display:none"></li>
+            </ul>
+        </div>
+
+        <ul data-role="listview" data-inset="true">
+            <li data-role="fieldcontain">
+                <input data-val="true" ng-model='user.name' data-val-required="The User Name field is required." id="UserName" name="UserName" placeholder="Name@example.com" type="text" value="" />            
+            </li>
+            <li data-role="fieldcontain">
+                <input data-val="true" ng-model='user.password' data-val-required="The Password field is required." id="Password" name="Password" placeholder="Password" type="password" />            
+            </li>
+            <li data-role="fieldcontain">
+
+            </li>
 
 
-        <li data-role="fieldcontain">
-
-            <input data-val="true" data-val-required="The User Name field is required." id="UserName" name="UserName" placeholder="Name@example.com" type="text" value="" />            
-        </li>
-
-        <li data-role="fieldcontain">
-
-            <input data-val="true" data-val-required="The Password field is required." id="Password" name="Password" placeholder="Password" type="password" />            
-        </li>
-        <li data-role="fieldcontain">
-
-        </li>
-
-
-        <li data-role="fieldcontain">
-            <input class="button-block button-100" type="submit" value="Login" />
-        </li>
+            <li data-role="fieldcontain">
+                <input type='submit' class="button-block button-100" value="Login" ng-click='doLogin()' />
+            </li>
         <li data-role="fieldcontain">
 
         </li>
@@ -99,11 +99,38 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
 
 
-<script >
+<script type="text/javascript">
 
 function loginController ($scope, $http)
 {
-    $scope.Something = 'hello';
+    $scope.user = {};
+
+    $scope.doLogin = function()
+    {
+        console.log($scope.user.name);
+        console.log($scope.user.password);
+        
+        var body = "grant_type=password&username=" + $scope.user.name + "&password=" + $scope.user.password;
+
+        $http({
+            method: 'POST', 
+            url: 'http://54.203.251.4/lascada-webapi/Token', 
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            data: body
+        }).
+        success(function(data, status, headers, config) {
+            
+            localStorage.token = data.access_token ;
+
+            console.log(localStorage.token);
+
+            window.location = "/app/index.html";
+
+        }).
+        error(function(data, status, headers, config) {
+
+        });
+    };
 }
 
 

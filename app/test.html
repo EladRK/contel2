@@ -6,11 +6,6 @@
 	
 	<div ng-app ng-controller='ridesController'>
 
-		<input type='text' placeholder="username" ng-model='username'></input>
-		<input type='text' placeholder="password" ng-model='password'></input>
-
-		<span>{{hello}}</span>
-
 		<button ng-click='doLogin()'> Login
 		</button> <br/>
 		
@@ -20,6 +15,8 @@
 		<button ng-click='getLocations()'> Get Locations
 		</button> <br/>
 
+		<button ng-click='getSites()'> Get Sites
+		</button> <br/>
 
 		<ul>
 			<li ng-repeat='site in locations' >
@@ -45,12 +42,8 @@
 <script type="text/javascript">
 	function ridesController($scope, $http) {
 
-		$scope.hello = "from angular";
 		$scope.doLogin = function()
 		{
-			console.log($scope.username);
-			console.log($scope.password);
-		
 			var body = "grant_type=password&username=elad@test.com&password=123456";
 
             $http({
@@ -61,11 +54,11 @@
             }).
             success(function(data, status, headers, config) {
                 
-                console.log(data);
+                //console.log(data);
 
-                var access_token = data. access_token ;
+                $scope.token = data.access_token;
 
-                console.log(access_token);
+                console.log($scope.token);
 
 
             }).
@@ -94,15 +87,33 @@
 
 		$scope.getLocations = function()
 		{
-			var siteId = '10';
+			var siteId = '1014';
 
 			$http({
             	method: 'GET', 
+            	headers: {'Authorization': 'bearer ' + $scope.token},
             	url: 'http://54.203.251.4/lascada-webapi/api/Location/' + siteId
             }).
             success(function(data, status, headers, config) {
                 
                 setLocations(data)
+            }).
+            error(function(data, status, headers, config) {
+
+            });
+		}
+
+		$scope.getSites = function()
+		{
+			$http({
+            	method: 'GET', 
+            	headers: {'Authorization': 'bearer ' + $scope.token},
+            	url: 'http://54.203.251.4/lascada-webapi/api/site/GetUserSites'
+            }).
+            success(function(data, status, headers, config) {
+
+            	console.log(data);
+                
             }).
             error(function(data, status, headers, config) {
 

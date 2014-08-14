@@ -25,11 +25,10 @@ angular.module('myApp.controllers', [])
       $scope.locationId = $routeParams.locationId
   }])
   .controller('LocationEditController', ['$scope', '$routeParams', function($scope,$routeParams) {
+
       $scope.locationId = $routeParams.locationId
   }])
   .controller('IndexController', ['$scope', '$http', function($scope, $http) {
-
-  	$scope.locations = ['ramat gan', 'tel aviv'];
 
   	$scope.isMenuOpen = false;
 
