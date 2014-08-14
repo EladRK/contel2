@@ -29,7 +29,7 @@
 <div id='bodyContainer'>
   <header class="bar-title Sbody" ng-class="{'moved-body':isMenuOpen}">
 
-    <h1 class="title">My Plant</h1>
+    <h1 class="title" ng-init="appTitle = 'Home'">{{appTitle}}</h1>
 
     <a class="button menu-trigger" ng-click='isMenuOpen=!isMenuOpen'>
       <img src="http://54.203.251.4/LaScada/content/images/SidePanel.png" style="vertical-align:middle; margin-top: -1px; margin-left: 2px;" />
@@ -40,25 +40,25 @@
   <nav class="bar-tab Sbody" ng-class="{'moved-body':isMenuOpen}">
     <ul class="tab-inner ">
       <li class="tab-item ">
-        <a href="#/home">
+        <a ng-click="appTitle = 'Home'" href="#/home">
           <span class="tab-icon tab-icon-home">&nbsp;</span>
           <div class="tab-label">Home</div>
         </a>
       </li>
       <li class="tab-item ">
-        <a href="#/alerts">
+        <a ng-click="appTitle = 'Alerts'" href="#/alerts">
           <span class="tab-icon tab-icon-alerts">&nbsp;</span>
           <div class="tab-label">Alerts</div>
         </a>
       </li>
       <li class="tab-item ">
-        <a href="#/admin">
+        <a ng-click="appTitle = 'Admin'" href="#/admin">
           <span class="tab-icon tab-icon-admin">&nbsp;</span>
           <div class="tab-label">Admin</div>
         </a>
       </li>
       <li class="tab-item ">
-        <a href="#/about">
+        <a ng-click="appTitle = 'About'" href="#/about">
           <span class="tab-icon tab-icon-about">&nbsp;</span>
           <div class="tab-label">About</div>
         </a>
