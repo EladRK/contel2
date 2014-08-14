@@ -1,0 +1,54 @@
+
+
+
+<div id="__AjaxAntiForgeryForm">
+    <input name="__RequestVerificationToken" type="hidden" value="u7_glGc1qy64164p7WPL_qwtm1YjVN9W3lr9HI2kJzRSzHSrhwsX-ZXDhxnLd6Exv4mfBHmaTekDEbhE0Llwj9xzLybRMbJkJ62UFnrEYLbPImYx68McOUyERgRplHBo0" />
+</div>
+<div id="result" data-url-Delete="/LaScada/Connector/Delete">
+     <ul class="list">
+        <li class="list-divider"> Connectors List </li>
+            <li class="swipe-li">
+                <div class="list-item list-item-swipe" data-href="/LaScada/Connector/Edit/1020">
+                   <span>Demo</span>
+                   <span></span>
+                    <span class="count count-swipe">Edit</span>
+                </div>
+                <a data-item-name="Demo" data-item-id="1020" data-delete-msg="Are you sure you want to delete Demo and all of it's related tags?" class="button-negative button-delete button-swipe button-hidden" >Delete</a>
+            </li>
+         <li class="list-divider">
+            <div>
+                <a href="/LaScada/Connector/Create">
+                    <span class="icon-add">&nbsp;</span>    
+                    Add New Connector
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<script id="template" type="text/x-handlebars-template">
+    <ul id="user-list" class="list">
+       <li class="list-divider">Connectors List</li>
+        {{#each objects}}
+        <li class="swipe-li">
+            <div class="list-item list-item-swipe" data-href="/LaScada/Connector/Edit/{{this.ConnectorId}}">
+                   <span>{{this.ConnectorName}}</span>
+                   <span>{{this.OPC_ServerURL}}</span>
+                   <span class="count count-swipe">Edit</span>
+            </div>
+            <a data-item-name="{{this.ConnectorName}}" data-item-id="{{this.ConnectorId}}" data-delete-msg="Are you sure you want to delete {{this.ConnectorName}} and all of it's related tags?" class="button-negative button-delete button-swipe button-hidden" >Delete</a>
+        </li>
+        {{/each}}
+        <li class="list-divider">
+            <div>
+             <a href="/LaScada/Connector/Create">
+                    <span class="icon-add">&nbsp;</span>
+                    <span>   Add New Connector</span>
+              </a>
+            </div>
+        </li>
+    </ul>
+</script>
+
+

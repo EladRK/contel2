@@ -1,0 +1,114 @@
+
+
+
+<form action="/LaScada/Location/Edit?model=System.Data.Entity.DynamicProxies.Location_8EB184307B388B317F185C0B0723E474BC8818FD47442D3F05BCF1F5A951E21F" method="post"><input name="__RequestVerificationToken" type="hidden" value="6tQCljzRYYIEXvuQ1_bv4_r8uucpmvPuUFFkloHLJa6U3kGcc1LSidOWY4IWnfR4greVEhgOaWWemzcu6WAlfMd419WiGGd2XxNyxPfItT6yD7rKQA3gnQDQo9v0mru40" /><input data-val="true" data-val-number="The field Location Id must be a number." data-val-required="The Location Id field is required." id="LocationId" name="LocationId" type="hidden" value="1188" /><input data-val="true" data-val-number="The field ViewOrder must be a number." id="ViewOrder" name="ViewOrder" type="hidden" value="0" /><input data-val="true" data-val-required="The IsActive field is required." id="IsActive" name="IsActive" type="hidden" value="True" /><input data-val="true" data-val-number="The field SiteId must be a number." id="SiteId" name="SiteId" type="hidden" value="1014" /><input id="LocationType" name="LocationType" type="hidden" value="Site" /><input data-val="true" data-val-number="The field Parent Id must be a number." data-val-required="The Parent Id field is required." id="LocationParentId" name="LocationParentId" type="hidden" value="0" />    <div id="__AjaxAntiForgeryForm">
+    <input name="__RequestVerificationToken" type="hidden" value="0wAneYPv0lmlgI-AKcTz4Gc__cbSkEIJQ7BKFJbGkSqqyqFaGd5O8gkqM21YvG3DXuFkFExkrRLTH-OJB224ZqTWyJrEaiT92qbTEy6yhFrB4PmWTi_zOUr8P339PBWl0" />
+</div>
+</form>  
+
+
+
+
+<div id="__AjaxAntiForgeryForm">
+    <input name="__RequestVerificationToken" type="hidden" value="Xoa-29U2DA0GwzCWqo-RLBgg6TOQ-ZvDQ08_68mM1inS6eheRZ1INKFclI18F01w923rEOsKGLobxnEaLCtk-GqhOKX2npqFpLsbHqQJT2WegCD8CNlW1xKWQeILyxDb0" />
+</div>
+<div id="result" data-url-changeitemorder="/LaScada/Tag/ChangeTagOrder" data-url-delete="/LaScada/Tag/Delete">
+    <ul id="tag-list" class="list">
+        <li class="list-divider">Edit Tags</li>
+                    <li class="">
+                <div class="arrows">
+                    <div class="arrow-up" data-item-id="10508" data-move="UP">&nbsp;</div>
+                    
+                </div>
+                <div class="list-item-with-sort list-item-swipe" data-href="/LaScada/Tag/Edit/10508">
+                    Main Piller
+                    <span class="count count-swipe">Edit</span>
+                    
+                </div>
+                <a data-item-name="Main Piller" data-item-id="10508" class="button-negative button-delete button-swipe button-hidden">Delete</a>
+            </li>
+            <li class="">
+                <div class="arrows">
+                    <div class="arrow-up" data-item-id="10509" data-move="UP">&nbsp;</div>
+                    
+                </div>
+                <div class="list-item-with-sort list-item-swipe" data-href="/LaScada/Tag/Edit/10509">
+                    Production Rate
+                    <span class="count count-swipe">Edit</span>
+                    
+                </div>
+                <a data-item-name="Production Rate" data-item-id="10509" class="button-negative button-delete button-swipe button-hidden">Delete</a>
+            </li>
+            <li class="">
+                <div class="arrows">
+                    <div class="arrow-up" data-item-id="10510" data-move="UP">&nbsp;</div>
+                    
+                </div>
+                <div class="list-item-with-sort list-item-swipe" data-href="/LaScada/Tag/Edit/10510">
+                    Total production
+
+                    <span class="count count-swipe">Edit</span>
+                    
+                </div>
+                <a data-item-name="Total production
+" data-item-id="10510" class="button-negative button-delete button-swipe button-hidden">Delete</a>
+            </li>
+            <li class="">
+                <div class="arrows">
+                    <div class="arrow-up" data-item-id="10511" data-move="UP">&nbsp;</div>
+                    
+                </div>
+                <div class="list-item-with-sort list-item-swipe" data-href="/LaScada/Tag/Edit/10511">
+                    Shift Manager
+                    <span class="count count-swipe">Edit</span>
+                    
+                </div>
+                <a data-item-name="Shift Manager" data-item-id="10511" class="button-negative button-delete button-swipe button-hidden">Delete</a>
+            </li>
+
+        <li class="list-divider">
+            <div>
+                <a href="/LaScada/Tag/Create?LocationId=1188">
+                    <span class="icon-add">&nbsp;</span>
+                    <span>Add New Tag</span>
+                </a>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+<script id="template" type="text/x-handlebars-template">
+    <ul id="tag-list2" class="list">
+        <li class="list-divider">Edit Tags</li>
+        {{#unless objects}}
+            <li>No tags exists for current location</li>  
+        {{/unless}}
+        {{#each objects}}
+            <li class="{{this.IsActive}}">
+                <div class="arrows">
+                    <div class="arrow-up" data-item-id="{{this.Location_mm_TagId}}" data-move="UP">&nbsp;</div>
+                    
+                </div>
+                <div class="list-item-with-sort list-item-swipe" data-href="/LaScada/Tag/Edit/{{this.Location_mm_TagId}}" style="left: 35px;">
+                    {{this.TagName}}
+                    <span class="count count-swipe">Edit</span>
+                    
+                </div>
+                <a data-item-name="{{this.TagName}}" data-item-id="{{this.Location_mm_TagId}}" class="button-negative button-delete button-swipe button-hidden">Delete</a>
+            </li>
+        {{/each}}
+        <li class="list-divider">
+            <div>
+                <a href="/LaScada/Tag/Create?LocationId=1188">
+                    <span class="icon-add">&nbsp;</span>
+                    <span>Add New Tag</span>
+                </a>
+            </div>
+        </li>
+    </ul>
+</script>
+
+
+
+

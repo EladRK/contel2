@@ -1,0 +1,56 @@
+
+
+
+<div id="__AjaxAntiForgeryForm">
+    <input name="__RequestVerificationToken" type="hidden" value="82KNlDFWXPP4xAg1DRagJrbGC7_nSSjeSfdCo-AdXNavQ9-Ff01wFYZngzYZpGVFLk4ZCAxp-K5AizLdXuH6e2ZQ7UDql06ozsp47veD29H4hnD9-NhDO_PZU1wwnm2l0" />
+</div>
+<div id="result" data-url-delete="/LaScada/Account/Delete">
+    <ul class="list">
+        <li class="list-divider"> User List </li>
+        <li class="list-divider">
+            <div>
+                <a href="/LaScada/Account/CreateUser">
+                    <span class="icon-add">&nbsp;</span>
+                    <span>Add New User</span>
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<script id="template" type="text/x-handlebars-template">
+    <ul id="user-list" class="list">
+        <li class="list-divider">User List</li>
+        {{#each objects}}
+        <li class="swipe-li">
+            <div class="list-item list-item-swipe" data-href="/LaScada/Account/UserDetails/{{this.UserId}}">
+                {{this.UserName}}
+                <span class="count count-swipe">Details</span>
+            </div>
+            <a data-item-name="{{this.UserName}}" data-item-id="{{this.UserId}}" class="button-negative button-delete button-swipe button-hidden">Delete</a>
+
+            <div class="mediaq">
+                
+                <div class="x700">
+                    <a data-item-name="{{this.UserName}}" data-item-id="{{this.UserId}}" class="button-negative button-delete">Delete</a>
+                </div>
+                
+            </div>
+
+        </li>
+        {{/each}}
+        <li class="list-divider">
+            <div>
+                <a href="/LaScada/Account/CreateUser">
+                    <span class="icon-add">&nbsp;</span>
+                    <span>Add New User</span>
+                </a>
+            </div>
+        </li>
+    </ul>
+</script>
+
+
+
+        
