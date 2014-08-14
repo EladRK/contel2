@@ -9,7 +9,22 @@ angular.module('myApp.controllers', [])
     .controller('MyCtrl2', ['$scope', function ($scope) {
 
     }])
-    .controller('HomeController', ['$scope', function ($scope) {
+    .controller('HomeController', ['$scope', '$http', function ($scope, $http) {
+
+        $scope.getTags = function () {
+
+            $http({
+                method: 'GET',
+                url: 'http://54.203.251.4/LaScada-WebApi/api/Tag/1018?LocationId=2259'
+            }).
+                success(function (data, status, headers, config) {
+
+                    console.log(data);
+                }).
+                error(function (data, status, headers, config) {
+
+                });
+        }
 
     }])
     .controller('AlertsController', ['$scope', '$http', function ($scope, $http) {
@@ -20,33 +35,18 @@ angular.module('myApp.controllers', [])
     }])
     .controller('AboutController', ['$scope', function ($scope) {
   }])
-  .controller('LocationController', ['$scope', '$routeParams', function($scope,$routeParams) {
-      $scope.locationId = $routeParams.locationId
-  }])
-  .controller('LocationEditController', ['$scope', '$routeParams', function($scope,$routeParams) {
+    .controller('createLocationController', ['$scope', '$routeParams', function ($scope, $routeParams) {
 
-      $scope.locationId = $routeParams.locationId
-  }])
-  .controller('IndexController', ['$scope', '$http', function($scope, $http) {
+        $scope.locationId = $routeParams.locationId
+    }])
+    .controller('EditTagController', ['$scope', function ($scope) {
 
-        $scope.getTags = function () {
+    }])
+    .controller('CreateTagController', ['$scope', function ($scope) {
 
-            $http({
-                method: 'GET',
-                url: 'http://54.203.251.4/LaScada-WebApi/api/Tag/1018?LocationId=2259'
-            }).
-            success(function (data, status, headers, config) {
+    }])
+    .controller('createUserController', ['$scope', function ($scope) {
 
-                console.log(data);
-            }).
-            error(function (data, status, headers, config) {
-
-            });
-        }
-
-
-        $scope.isMenuOpen = false;
-        $scope.getTags();
     }])
     .controller('LocationController', ['$scope', '$routeParams', function ($scope, $routeParams) {
         $scope.locationId = $routeParams.locationId
@@ -56,7 +56,6 @@ angular.module('myApp.controllers', [])
     }])
     .controller('IndexController', ['$scope', '$http', function ($scope, $http) {
 
-        $scope.locations = ['ramat gan', 'tel aviv'];
 
         $scope.isMenuOpen = false;
 
@@ -74,7 +73,7 @@ angular.module('myApp.controllers', [])
                 error(function (data, status, headers, config) {
 
                 });
-        }
+        };
 
         function setLocations(rawData) {
             var locations = [];
@@ -85,8 +84,7 @@ angular.module('myApp.controllers', [])
                 var locationId = rawData[i].LocationId;
                 var locationParentId = rawData[i].LocationId;
                 locationMap[locationId] = rawData[i];
-            }
-            ;
+            };
 
             for (var i = rawData.length - 1; i >= 0; i--) {
                 var locationId = rawData[i].LocationId;
@@ -102,8 +100,7 @@ angular.module('myApp.controllers', [])
                     locationMap[locationParentId].childLocations.push(rawData[i]);
                 }
 
-            }
-            ;
+            };
 
             $scope.locations = locations;
         }

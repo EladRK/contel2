@@ -1,0 +1,59 @@
+
+
+<h2></h2>
+
+<form action="/LaScada/Connector/Edit/1020" method="post"><input name="__RequestVerificationToken" type="hidden" value="FbRDMcFJfrxx7Rk0wASlmwNwkZbMtMh62ZMTiAcFs1gxet3eGXIOoOy5ZfKdI-oTd1J_vXQiwTmRFF6N_cvyr9FONnJP8857wlcMqH5GWmxasb0wfvN5KPBuZSZwcxC50" /><input data-val="true" data-val-number="The field ConnectorId must be a number." data-val-required="The ConnectorId field is required." id="ConnectorId" name="ConnectorId" type="hidden" value="1020" /><input data-val="true" data-val-number="The field SiteId must be a number." data-val-required="The SiteId field is required." id="SiteId" name="SiteId" type="hidden" value="1014" />    <fieldset>
+        <legend></legend>
+
+        <div class="editor-label">
+            <label for="ConnectorName">Connector Name</label>
+        </div>
+        <div class="editor-field">
+            <input class="text-box single-line" data-val="true" data-val-required="The Connector Name field is required." id="ConnectorName" name="ConnectorName" type="text" value="Demo" />
+            <span class="field-validation-valid" data-valmsg-for="ConnectorName" data-valmsg-replace="true"></span>
+        </div>
+
+
+        <div class="editor-label">
+            <label for="ConnectorTypeId">Connector Type</label>
+        </div>
+        <div class="editor-field">
+            
+            <select id="ConnectorTypeId" name="ConnectorTypeId">
+                        <option value="1">OPC</option>
+                        <option value="5" selected>Random</option>
+                        <option value="6">PIConnector</option>
+            </select>
+       
+            <span class="field-validation-valid" data-valmsg-for="ConnectorTypeId" data-valmsg-replace="true"></span>
+        </div>
+
+        <div id="divOPC" class="hidden-no-height">
+            <div class="editor-label">
+                <label for="OPC_ServerURL">OPC_ServerURL</label>
+            </div>
+            <div class="editor-field">
+                <input class="text-box single-line" id="OPC_ServerURL" name="OPC_ServerURL" type="text" value="" />
+                <span class="field-validation-valid" data-valmsg-for="OPC_ServerURL" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="editor-label">
+            <label for="ScanRateId">Scan Rate</label>
+        </div>
+        <div class="editor-field">
+            <select data-val="true" data-val-number="The field Scan Rate must be a number." data-val-required="The Scan Rate field is required." id="ScanRateId" name="ScanRateId"><option value="1">5 Minutes</option>
+<option value="2">15 Minutes</option>
+<option value="3">30 Minutes</option>
+<option value="5">1 Hour</option>
+</select>
+            <span class="field-validation-valid" data-valmsg-for="ScanRateId" data-valmsg-replace="true"></span>
+        </div>
+
+        <p>
+            <input id="submitBtn" type="submit" class="button-block button-100" value="Save" />
+        </p>
+    </fieldset>
+</form>
+
+

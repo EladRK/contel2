@@ -1,0 +1,150 @@
+
+
+<form action="/LaScada/Tag/Edit/10508" method="post"><input name="__RequestVerificationToken" type="hidden" value="jUdhITAIMKFnbafHvL5ps-m0yqMbYa8NU1DwQGf6QCgTIp8B8jPTuKJaF42-d5p2gOc19dv2WX_qk7ffruO1iXnkWJ7xgfx71DFqO1S7hT8KABTtE40bQo6IegbYBZ920" />    <fieldset>
+        <legend></legend>
+
+        <input data-val="true" data-val-number="The field Location_mm_TagId must be a number." data-val-required="The Location_mm_TagId field is required." id="Location_mm_TagId" name="Location_mm_TagId" type="hidden" value="10508" />
+        <input data-val="true" data-val-number="The field LocationId must be a number." data-val-required="The LocationId field is required." id="LocationId" name="LocationId" type="hidden" value="1188" />
+        <input data-val="true" data-val-number="The field TagId must be a number." data-val-required="The TagId field is required." id="TagId" name="TagId" type="hidden" value="10508" />
+        <input data-val="true" data-val-number="The field TagId must be a number." data-val-required="The TagId field is required." id="Tag_TagId" name="Tag.TagId" type="hidden" value="10508" />
+        <input data-val="true" data-val-number="The field SiteId must be a number." data-val-required="The SiteId field is required." id="Tag_SiteId" name="Tag.SiteId" type="hidden" value="1014" />
+
+        <div class="editor-label">
+            <label for="Tag_TagName">Tag Name</label>
+        </div>
+        <div class="editor-field">
+            <input class="text-box single-line" data-val="true" data-val-length="Tag name cannot be longer than 50 characters." data-val-length-max="50" data-val-required="The Tag Name field is required." id="Tag_TagName" name="Tag.TagName" type="text" value="Main Piller" />
+            <span class="field-validation-valid" data-valmsg-for="Tag.TagName" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="editor-label">
+            <label for="Tag_ConnectorId">Connector</label>
+        </div>
+        <div class="editor-field">
+            
+            <select data-val="true" data-val-number="The field ConnectorId must be a number." data-val-required="The Connector field is required." id="Tag_ConnectorId" name="Tag.ConnectorId">
+                
+                    <option value="1020" data-connector-type="Random"
+                            selected="selected"   >Demo</option>
+                <option value="goto" disabled="disabled">Go to Admin --> Live Data Connectors to add more connectors</option>
+            </select>
+
+            <span class="field-validation-valid" data-valmsg-for="Tag.ConnectorId" data-valmsg-replace="true"></span>
+        </div>
+
+        <div id="OPC" class="connector-data hidden-no-height">
+            <div class="editor-label">
+                <label for="Tag_TagAddress">Tag Address</label>
+            </div>
+            <div class="editor-field">
+                <input data-val="true" data-val-length="Tag address cannot be longer than 200 characters." data-val-length-max="200" id="Tag_TagAddress" name="Tag.TagAddress" placeholder="Channel1.Device1.Tag1" type="text" value="" />
+                <span class="field-validation-valid" data-valmsg-for="Tag.TagAddress" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="editor-label">
+            <label for="Tag_TagDataTypeId">Data Type</label>
+        </div>
+        <div class="editor-field">
+            <select data-val="true" data-val-number="The field TagDataTypeId must be a number." data-val-required="The Data Type field is required." id="Tag_TagDataTypeId" name="Tag.TagDataTypeId"><option selected="selected" value="1">Boolean</option>
+<option value="2">Float</option>
+<option value="3">Int</option>
+<option value="4">String</option>
+</select>
+            <span class="field-validation-valid" data-valmsg-for="Tag.TagDataTypeId" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="editor-label">
+            <label for="Tag_UomName">Unit of Measure</label>
+        </div>
+        <div class="editor-field">
+            <input class="text-box single-line" id="Tag_UomName" name="Tag.UomName" type="text" value="" />
+            <span class="field-validation-valid" data-valmsg-for="Tag.UomName" data-valmsg-replace="true"></span>
+        </div>
+        
+        <div class="editor-label">
+            <label for="GaugeTypeId">Display Type</label>
+        </div>
+        <div class="editor-field">
+            <select data-val="true" data-val-number="The field Display Type must be a number." data-val-required="The Display Type field is required." id="GaugeTypeId" name="GaugeTypeId"><option value="1">Text</option>
+<option value="2">Circular Gauge</option>
+<option selected="selected" value="3">On/Off Gauge</option>
+</select>
+            <span class="field-validation-valid" data-valmsg-for="GaugeTypeId" data-valmsg-replace="true"></span>
+        </div>
+
+        <div id="GaugeLimits" class="hidden-no-height">
+
+            <div class="editor-label">
+                <label for="GaugeLowerLimit">Gauge Lower Limit</label>
+            </div>
+            <div class="editor-field">
+                <input class="text-box single-line" data-val="true" data-val-number="The field Gauge Lower Limit must be a number." id="GaugeLowerLimit" name="GaugeLowerLimit" type="text" value="0" />
+                <span class="field-validation-valid" data-valmsg-for="GaugeLowerLimit" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="editor-label">
+                <label for="GaugeUpperLimit">Gauge Upper Limit</label>
+            </div>
+            <div class="editor-field">
+                <input class="text-box single-line" data-val="true" data-val-number="The field Gauge Upper Limit must be a number." id="GaugeUpperLimit" name="GaugeUpperLimit" type="text" value="130" />
+                <span class="field-validation-valid" data-valmsg-for="GaugeUpperLimit" data-valmsg-replace="true"></span>
+            </div>
+
+        </div>
+
+        <hr />
+
+
+        <div class="editor-label">
+            <label for="Tag_IsAlert">Is Alert</label>
+        </div>
+        <div class="toggle " id="IsAlert">
+          <div class="toggle-handle"></div>
+        </div>
+        <input data-val="true" data-val-required="The Is Alert field is required." id="Tag_IsAlert" name="Tag.IsAlert" type="hidden" value="False" />
+
+        <div id="AlertLimits">
+
+            <div class="editor-label">
+                <label for="Tag_LowerLimit">Lower Limit</label>
+            </div>
+            <div class="editor-field">
+                <input class="text-box single-line" data-val="true" data-val-number="The field Lower Limit must be a number." id="Tag_LowerLimit" name="Tag.LowerLimit" type="text" value="-1" />
+                <span class="field-validation-valid" data-valmsg-for="Tag.LowerLimit" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="editor-label">
+                <label for="Tag_Target">Target (optional)</label>
+            </div>
+            <div class="editor-field">
+                <input class="text-box single-line" data-val="true" data-val-number="The field Target (optional) must be a number." id="Tag_Target" name="Tag.Target" type="text" value="25" />
+                <span class="field-validation-valid" data-valmsg-for="Tag.Target" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="editor-label">
+                <label for="Tag_UpperLimit">Upper Limit</label>
+            </div>
+            <div class="editor-field">
+                <input class="text-box single-line" data-val="true" data-val-number="The field Upper Limit must be a number." id="Tag_UpperLimit" name="Tag.UpperLimit" type="text" value="2" />
+                <span class="field-validation-valid" data-valmsg-for="Tag.UpperLimit" data-valmsg-replace="true"></span>
+            </div>
+
+        </div>
+
+        <hr />
+
+
+        <div class="editor-label">
+            <label for="Tag_IsActive">Active</label>
+        </div>
+        <div class="toggle active" id="IsActive">
+            <div class="toggle-handle"></div>
+        </div>
+        <input data-val="true" data-val-required="The Active field is required." id="Tag_IsActive" name="Tag.IsActive" type="hidden" value="True" />
+
+        <p>
+            <input class="button-block button-100" type="submit" value="Save" />
+        </p>
+    </fieldset>
+</form>

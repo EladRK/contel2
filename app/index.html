@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html lang="en" ng-app="myApp" class="no-js">
 <!--<![endif]-->
@@ -67,7 +70,7 @@
   </nav>
 
 
-  <div id="body" class="content content-padded Sbody"  ng-class="{'moved-body':isMenuOpen}">
+  <div id="body" class="content content-padded Sbody" ng-class="{'moved-body':isMenuOpen}">
 
       <!--span >{{isMenuOpen}}</span-->
 
@@ -83,17 +86,17 @@
 
     <ul class="list">
       <div ng-repeat='site in locations'>
-      <li class="list-divider"  >
+      <li class="list-divider">
       {{site.LocationName}}
 
       </li>
         <div ng-repeat='area in site.childLocations'>
-        <li class="list-divider"  >
+        <li class="list-divider">
         {{area.LocationName}}
 
         </li>
         <div ng-repeat='location in area.childLocations'>
-          <li >
+          <li>
           <a href="#/location/{{location.LocationId}}">
                     
                     {{location.LocationName}}
@@ -108,20 +111,15 @@
             <li style=" background-color:black; font-size: 20px; font-weight: bold; line-height: 30px; color: #FFF;  ">
                 <a href="/LaScada/Account/LogOff">Log off  noam2 </a>
             </li>
-
-        </ul>
+      </ul>
   </div>
-
-
-
-  <!--[if lt IE 7]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+  <script src="bower_components\jquery\dist\jquery.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="js/app.js"></script>
